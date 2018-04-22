@@ -6,21 +6,21 @@ const ENCIRCLEMENT_TIME_DISPLAY_INTERVAL = 300;
 
 class Counter extends React.Component {
     render() {
-        return <div className={'stopwatch'}>{this.props.value}</div>
+        return <div id={'stopwatch'}>{this.props.value}</div>
     }
 }
 
 class Button extends React.Component {
     render() {
-        return (<a href='#' className='button' id={this.props.id} onMouseDown={this.props.onClick}>{this.props.name}</a>)
+        return (<a href='#' id='button' id={this.props.id} onMouseDown={this.props.onClick}>{this.props.name}</a>)
     }
 }
 
 class ResultList extends React.Component {
     render() {   
         return (
-        <div className='resultList'>
-            <ol reversed={'reversed'} className={'results'}>{this.props.value}</ol>
+        <div id='resultList'>
+            <ol reversed={'reversed'} id={'results'}>{this.props.value}</ol>
             <Button id={'clear'} onClick={this.props.onButtonClick} name={'Clear list'} />
         </div>
         )
@@ -46,14 +46,15 @@ class Stopwatch extends React.Component {
     render() {
         return (
             <div>
-                <div className={'app'}>
-                    <nav className={'controls'}>
+                <div id={'app'}>
+                    <Counter value={this.printTime} />
+                    <nav id={'controls'}>
                         <Button id={'start'} onClick={this.start} name={'Start'}/>
                         <Button id={'encirclement'} onClick={this.encirclement} name={'Encirclement'}/>
                         <Button id={'stop'} onClick={this.stop} name={this.buttonStopName}/>
  
                     </nav>
-                    <Counter value={this.printTime} />
+                    
                 </div>
                 <ResultList value={this.printEncirclementTimes()} onButtonClick={this.clear} />
             </div>
@@ -62,7 +63,7 @@ class Stopwatch extends React.Component {
 
 // metoda reset 
     reset = () => {
-        let timesTemp = this.state.times;
+        const timesTemp = this.state.times;
         timesTemp.minutes = timesTemp.seconds = timesTemp.miliseconds = 0;
         this.setState({times: timesTemp});
     }
@@ -108,7 +109,7 @@ class Stopwatch extends React.Component {
 
 // metoda calculate - przelicza min, sek i milisek
     calculate = () => {
-        let timesTemp = this.state.times;
+        const timesTemp = this.state.times;
 
         timesTemp.miliseconds += 1;
         if( timesTemp.miliseconds >= 100) {
@@ -157,7 +158,7 @@ class Stopwatch extends React.Component {
                 
             }, ENCIRCLEMENT_TIME_DISPLAY_INTERVAL);           
         }
-        else return;
+//        else return;
     }
 
 // czyszczenie listy wyników
