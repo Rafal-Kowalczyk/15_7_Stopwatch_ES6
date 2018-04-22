@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:500|Nova+Mono');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    background: url('https://images.unsplash.com/photo-1494122353634-c310f45a6d3c?ixlib=rb-0.3.5&s=6452bc223bf69d3450ceec588528134e&auto=format&fit=crop&w=1500&q=80');  
+    background-size: cover;
+    background-position: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    color: white;
+}
+
+.app,
+.resultList {   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, .5);
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+    width: 100px;
+    margin: 10px 15px;
+    display: inline-block;
+    text-align: center;
+    padding: 5px;
+    font-size: 20px;
+    color: white;
+}
+
+#start {
+    border-bottom: 6px solid #00d83d;
+}
+#stop {
+    border-bottom: 6px solid #ff0000;
+}
+#encirclement {
+    border-bottom: 6px solid #FF9800;
+    width: 150px;
+}
+#clear {
+    margin: 0;   
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 150px;
+    padding: 10px;
+    border-bottom: 6px solid #003fff;
+}
+.stopwatch {
+    font-family: 'Roboto Mono', monospaced;
+    font-size: 8vw;
+    font-weight: 500;
+    margin: 15px;
+    margin-bottom: 40px;
+    padding: 10px;
+    color: white;
+    
+}
+
+li {
+    padding-right: 45px;
+    padding-left: 5px;
+    color: white;
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    max-height: 200px;
+    min-height: 50px;
+    max-width: 800px;
+    width: 80%;
+    font-family: 'Nova Mono', monospace;
+    font-size: 16px;
+    flex-wrap: wrap;
+    list-style: decimal-leading-zero;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-top: 10px;
+    overflow: auto;    
+    margin-bottom: 0;
+}

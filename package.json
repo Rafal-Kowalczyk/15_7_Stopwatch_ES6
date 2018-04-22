@@ -1,0 +1,28 @@
+{
+  "name": "zadanie_15_7",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel script.js --watch --out-file script-compiled.js",
+    "test": "npm run test:html && npm run test:js",
+    "test:html": "glob-run nu-html-checker *.html",
+    "test:js": "jshint ./ --exclude node_modules/,script-compiled.js"
+  },
+  "keywords": [],
+  "author": "Rafał Kowlczyk",
+  "license": "ISC",
+  "dependencies": {
+    "glob-run": "^0.1.6",
+    "jshint": "^2.9.5",
+    "nu-html-checker": "^0.1.0",
+    "babel-standalone": "^6.26.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "http-server": "^0.11.1"
+  }
+}
