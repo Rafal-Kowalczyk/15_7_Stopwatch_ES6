@@ -6,21 +6,21 @@ const ENCIRCLEMENT_TIME_DISPLAY_INTERVAL = 300;
 
 class Counter extends React.Component {
     render() {
-        return <div id={'stopwatch'}>{this.props.value}</div>
+        return <div className={'stopwatch'}>{this.props.value}</div>
     }
 }
 
 class Button extends React.Component {
     render() {
-        return (<a href='#' id='button' id={this.props.id} onMouseDown={this.props.onClick}>{this.props.name}</a>)
+        return (<a href='#' className={'button'} id={this.props.id} onMouseDown={this.props.onClick}>{this.props.name}</a>)
     }
 }
 
 class ResultList extends React.Component {
     render() {   
         return (
-        <div id='resultList'>
-            <ol reversed={'reversed'} id={'results'}>{this.props.value}</ol>
+        <div className={'resultList'}>
+            <ol reversed={'reversed'} className={'results'}>{this.props.value}</ol>
             <Button id={'clear'} onClick={this.props.onButtonClick} name={'Clear list'} />
         </div>
         )
@@ -41,14 +41,13 @@ class Stopwatch extends React.Component {
         }
         this.printTime = this.format(this.state.times);
         this.buttonStopName = 'Stop';
-    }
-
+    }   
     render() {
         return (
             <div>
-                <div id={'app'}>
+                <div className={'app'}>
                     <Counter value={this.printTime} />
-                    <nav id={'controls'}>
+                    <nav className={'controls'}>
                         <Button id={'start'} onClick={this.start} name={'Start'}/>
                         <Button id={'encirclement'} onClick={this.encirclement} name={'Encirclement'}/>
                         <Button id={'stop'} onClick={this.stop} name={this.buttonStopName}/>

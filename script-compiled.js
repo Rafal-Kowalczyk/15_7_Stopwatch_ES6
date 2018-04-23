@@ -4,8 +4,6 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -30,7 +28,7 @@ var Counter = function (_React$Component) {
         value: function render() {
             return React.createElement(
                 'div',
-                { id: 'stopwatch' },
+                { className: 'stopwatch' },
                 this.props.value
             );
         }
@@ -51,11 +49,9 @@ var Button = function (_React$Component2) {
     _createClass(Button, [{
         key: 'render',
         value: function render() {
-            var _React$createElement;
-
             return React.createElement(
                 'a',
-                (_React$createElement = { href: '#', id: 'button' }, _defineProperty(_React$createElement, 'id', this.props.id), _defineProperty(_React$createElement, 'onMouseDown', this.props.onClick), _React$createElement),
+                { href: '#', className: 'button', id: this.props.id, onMouseDown: this.props.onClick },
                 this.props.name
             );
         }
@@ -78,10 +74,10 @@ var ResultList = function (_React$Component3) {
         value: function render() {
             return React.createElement(
                 'div',
-                { id: 'resultList' },
+                { className: 'resultList' },
                 React.createElement(
                     'ol',
-                    { reversed: 'reversed', id: 'results' },
+                    { reversed: 'reversed', className: 'results' },
                     this.props.value
                 ),
                 React.createElement(Button, { id: 'clear', onClick: this.props.onButtonClick, name: 'Clear list' })
@@ -228,11 +224,11 @@ var Stopwatch = function (_React$Component4) {
                 null,
                 React.createElement(
                     'div',
-                    { id: 'app' },
+                    { className: 'app' },
                     React.createElement(Counter, { value: this.printTime }),
                     React.createElement(
                         'nav',
-                        { id: 'controls' },
+                        { className: 'controls' },
                         React.createElement(Button, { id: 'start', onClick: this.start, name: 'Start' }),
                         React.createElement(Button, { id: 'encirclement', onClick: this.encirclement, name: 'Encirclement' }),
                         React.createElement(Button, { id: 'stop', onClick: this.stop, name: this.buttonStopName })
